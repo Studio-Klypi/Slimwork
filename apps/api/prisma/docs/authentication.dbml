@@ -1,0 +1,20 @@
+Table User {
+  id cuid pk [default: `cuid()`]
+  email string unique [not null]
+  passwordHash string [not null]
+  firstName string [not null]
+  lastName string [not null]
+  avatar string [null]
+  emailVerifiedAt datetime [null]
+  createdAt datetime [not null, default: `now()`]
+  updatedAt datetime [not null, default: `now()`]
+  deleteAt datetime [null]
+}
+
+Table Session {
+  token cuid pk [default: `cuid()`]
+  userId cuid [not null, ref: > User.id]
+  ip string [not null]
+  issuedAt datetime [not null, default: `cuid()`]
+  expiresAt datetime [not null]
+}

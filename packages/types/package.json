@@ -1,0 +1,8 @@
+{
+  "name": "@slimwork/types",
+  "version": "0.0.0-alpha",
+  "main": "./index.ts",
+  "devDependencies": {
+    "@prisma/client": "*"
+  }
+}
